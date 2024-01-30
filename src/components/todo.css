@@ -1,0 +1,151 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #2b2635;
+}
+
+.center-container {
+  height: 40%;
+  width: 50%;
+  margin-top: 5%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.todo-heading {
+  color: white;
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  fill: #e8dada;
+}
+
+.input-box-todo {
+  margin-left: 10px;
+  width: 70%;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid black;
+  padding-left: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  outline: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+}
+
+.add-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #316fc1;
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(11, 10, 10, 0.3);
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: green;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 5px;
+}
+
+.list-item {
+  list-style-type: none;
+  border: 2px solid rgb(161, 158, 158);
+  color: white;
+  padding: 3px;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-wrap: break-word;
+  position: relative;
+  margin-top: 10px;
+}
+
+.todolist {
+  color: #f4efef;
+}
+
+.list-item-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item {
+  margin-right: 10px;
+  padding: auto;
+}
+
+.delete-button {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  fill: #e8dada;
+  padding: 5px;
+  justify-content: left;
+  align-items: left;
+}
+
+.delete-button:hover {
+  fill: #ff0303;
+}
+
+.delete-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  border: none;
+  padding: auto;
+  background-color: transparent;
+}
+
+.delete-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+
+.delete-container:hover .delete-button,
+.delete-container:hover .delete-icon {
+  color: red;
+  fill: red;
+}
