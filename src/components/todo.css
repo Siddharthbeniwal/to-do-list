@@ -3,6 +3,7 @@
   justify-content: center;
   height: 100vh;
   background-color: #2b2635;
+  overflow-y: auto;
 }
 
 .center-container {
@@ -19,12 +20,19 @@
 
 .todo-heading {
   color: white;
-  margin: 10%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   fill: #e8dada;
+}
+
+.todo-text {
+  display: flex;
+  color: white;
+  margin-Left: 90px;
+  margin-bottom: 5px;
 }
 
 .input-box-todo {
@@ -56,6 +64,23 @@
 }
 
 .add-btn:hover {
+  background-color: green;
+}
+
+.done-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #316fc1;
+  color: white;
+  margin-left: 10px;
+  padding: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.done-btn:hover {
   background-color: green;
 }
 
@@ -99,11 +124,13 @@
 }
 
 .list-item {
+  margin-left: 10px;
   margin-right: 10px;
   padding: auto;
 }
 
-.delete-button {
+.delete-button,
+.edit-button {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
@@ -118,7 +145,11 @@
 }
 
 .delete-button:hover {
-  fill: #ff0303;
+  fill: #da4646;
+}
+
+.edit-button:hover {
+  fill: rgb(196, 196, 43);
 }
 
 .delete-container {
@@ -126,8 +157,11 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   cursor: pointer;
+  padding-right: 12px;
+  border-radius: 10px;
 }
 
 .delete-button {
@@ -143,9 +177,8 @@
   margin-right: 2px;
 }
 
-
 .delete-container:hover .delete-button,
 .delete-container:hover .delete-icon {
-  color: red;
-  fill: red;
+  color: #da4646;
+  fill: #da4646;
 }

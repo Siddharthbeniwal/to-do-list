@@ -6,6 +6,8 @@ const TodoInput = () => {
 
     const [text, setText] = useState('')
     const [taskList, setTaskList] = useState([])
+    const [editIndex, setEditIndex] = useState(0)
+    const [isEditing, setIsEditng] = useState(false)
 
     const handleChange = (e) => {
         setText(e.target.value);
@@ -39,6 +41,31 @@ const TodoInput = () => {
         }
     }
 
+    const handleEdit = (index) => {
+        console.log('inside handleEdit');
+        setIsEditng(true);
+        setText(taskList[index]);
+        setEditIndex(index);
+    }
+
+    const handleDone = () => {
+
+        if (text) {
+            if (taskList.includes(text)) {
+                alert('Task already exists')
+            } else {
+                taskList[editIndex] = text;
+                setTaskList(
+                    [...taskList]
+                );
+                setText('');
+                setIsEditng(false)
+            }
+        } else {
+            alert('Please enter a task')
+        }
+    }
+
     return (
         <div>
             <h1 className='todo-heading'>
@@ -48,10 +75,15 @@ const TodoInput = () => {
                 Welcome to To-do List
             </h1>
             <div>
+                {isEditing && <span className='todo-text'>
+                    You are currently editing task no. {editIndex + 1}
+                </span>}
                 <input className='input-box-todo' type='text' placeholder='Add a new task' value={text} onChange={(e) => handleChange(e)}></input>
-                <button className='add-btn' onClick={handleAddTask}>+</button>
+                {isEditing ?
+                    <button className='done-btn' onClick={handleDone}>Done</button>
+                    : <button className='add-btn' onClick={handleAddTask}>+</button>}
             </div>
-            <TodoList taskList={taskList} handleDelete={handleDelete} />
+            <TodoList taskList={taskList} handleDelete={handleDelete} handleEdit={handleEdit} />
         </div>
     )
 }
