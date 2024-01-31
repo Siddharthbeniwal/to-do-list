@@ -42,7 +42,6 @@ const TodoInput = () => {
     }
 
     const handleEdit = (index) => {
-        console.log('inside handleEdit');
         setIsEditng(true);
         setText(taskList[index]);
         setEditIndex(index);
